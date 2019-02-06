@@ -282,21 +282,21 @@ $(document).ready(function()
 					title:"PLAYLIST RAP",
 					artist:"PLAYLIST RAP",
 					album:"italy",
-					mp3:"files/Ligabue.mp3",
+					mp3:"files/articolo31lamiaragazzamena.mp3",
 					poster:"assets/RapCopertina.jpg"
 				},
 				{
 					title:"PLAYLIST REVIVAL",
 					artist:"PLAYLIST REVIVALs",
 					album:"italy",
-					mp3:"files/Ligabue.mp3",
+					mp3:"files/mellowmooddanceinnababylon.mp3",
 					poster:"assets/Revival.jpg"
 				},
 				{
 					title:"PLAYLIST METAL",
 					artist:"Ligabue",
 					album:"italy",
-					mp3:"files/Ligabue.mp3",
+					mp3:"files/ironmaidenfearofthedark.mp3",
 					poster:"assets/MetalCopertina.jpg"
 				},
 				{
@@ -310,7 +310,7 @@ $(document).ready(function()
 					title:"PLAYLIST FOLK",
 					artist:"PLAYLIST FOLK",
 					album:"italy",
-					mp3:"files/Ligabue.mp3",
+					mp3:"files/mannarinomesombriacato.mp3",
 					poster:"assets/Folk.jpg" 
 					
 				}
