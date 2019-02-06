@@ -22,8 +22,6 @@ public class SignUpServlet extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-System.out.println("Suxcca");
 		Utente registrazioneUtente = new Utente();
 		registrazioneUtente.setNome(request.getParameter("nome"));
 		registrazioneUtente.setCognome(request.getParameter("cognome"));

@@ -13,7 +13,6 @@ function Utente (nickname , nome , cognome , utenteartista , indirizzo , email ,
 
 function checkPasswordMatch() {
 	// Variabili associate ai campi del signup_form_data
-	alert("suca mirco ") ; 
 	var nome = document.signup_form_data.nome.value;
 	var cognome = document.signup_form_data.cognome.value;
 	var nickname = document.signup_form_data.nickname.value;

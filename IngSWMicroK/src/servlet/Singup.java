@@ -19,7 +19,6 @@ public class Singup extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("Suxcca");
 		Utente registrazioneUtente = new Utente();
 		registrazioneUtente.setNome(request.getParameter("nome"));
 		registrazioneUtente.setCognome(request.getParameter("cognome"));

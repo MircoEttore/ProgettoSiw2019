@@ -39,19 +39,22 @@ public class UtenteDaoJDBC implements UtenteDao {
 			statement.setBoolean(5, utente.isUtenteartista());
 			statement.setString(6, utente.getPassword());
 			statement.setString(7, utente.getIndirizzo());
-			// statement.executeUpdate();
-			System.out.println("Record inserita nella tabella!");
+
 			Utente u = findByPrimaryKeyq(utente.getEmail());
-			if (u != null)
+			if (u.getEmail() != null)
 				return 1;
-			else
+			else {
 				statement.executeUpdate();
+			}
+				
+			
 			System.err.println(u.getEmail());
 
 			ResultSet resultSet = statement.getGeneratedKeys();
 			while (resultSet.next()) {
 				utente.setIdUtente(resultSet.getInt(1));
 			}
+			System.out.println(resultSet);
 			status = 0;
 		} catch (SQLException e) {
 			String message = e.getMessage();
@@ -245,7 +248,6 @@ public class UtenteDaoJDBC implements UtenteDao {
 
 		}
 		return u;
-
 	}
 
 	@Override
@@ -449,5 +451,4 @@ public class UtenteDaoJDBC implements UtenteDao {
 		return listaC;
 
 	}
-
 }
