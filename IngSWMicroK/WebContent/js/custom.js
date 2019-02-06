@@ -231,9 +231,9 @@ $(document).ready(function()
 			$("#jplayer_1").jPlayer({
 				ready: function () {
 					$(this).jPlayer("setMedia", {
-						title:"vOGLIO",
+						title:"Fuori Dal Tunnel",
 							artist:"MarcoMengoni",
-							mp3:"files/MarcoMengoni-Voglio.mp3"
+							mp3:"assets/Caparezza-Fuoridaltunnel.mp3"
 					});
 				},
 				play: function() { // To avoid multiple jPlayers playing together.
@@ -272,46 +272,47 @@ $(document).ready(function()
 			var playlist = 
 			[
 				{
-					title:"E' i coglioni",
-					artist:"vOGLIO",
+					title:"PLAYLIST POP",
+					artist:"PLAYLIST POP",
 					album:"italy",
 					mp3:"files/Ligabue.mp3",
-					poster:"assets/Ligabue.png"
+					poster:"assets/PopCopertina.jpg"
 				},
 				{
-					title:"E' venerdi non mi rompete i coglioni",
-					artist:"Ligabue",
+					title:"PLAYLIST RAP",
+					artist:"PLAYLIST RAP",
 					album:"italy",
 					mp3:"files/LigabueÈvenerdìnonmirompetei.mp3",
-					poster:"assets/Ligabue.png"
+					poster:"assets/RapCopertina.jpg"
 				},
 				{
-					title:"E' venerdi non mi rompete i coglioni",
+					title:"PLAYLIST REVIVAL",
+					artist:"PLAYLIST REVIVALs",
+					album:"italy",
+					mp3:"/files/LigabueÈvenerdìnonmirompetei.mp3",
+					poster:"assets/Revival.jpg"
+				},
+				{
+					title:"PLAYLIST METAL",
 					artist:"Ligabue",
 					album:"italy",
 					mp3:"/files/LigabueÈvenerdìnonmirompetei.mp3",
-					poster:"assets/Ligabue.png"
+					poster:"assets/MetalCopertina.jpg"
 				},
 				{
-					title:"E' venerdi non mi rompete i coglioni",
+					title:"PLAYLISTR RAGGAE",
 					artist:"Ligabue",
 					album:"italy",
 					mp3:"/files/LigabueÈvenerdìnonmirompetei.mp3",
-					poster:"assets/Ligabue.png"
+					poster:"assets/RAGGAEcopertina.jpg"
 				},
 				{
-					title:"E' venerdi non mi rompete i coglioni",
-					artist:"Ligabue",
-					album:"italy",
-					mp3:"/files/LigabueÈvenerdìnonmirompetei.mp3",
-					poster:"assets/Ligabue.png"
-				},
-				{
-					title:"E' venerdi non mi rompete i coglioni",
-					artist:"Ligabue",
+					title:"PLAYLIST FOLK",
+					artist:"PLAYLIST FOLK",
 					album:"italy",
 					mp3:"files/LigabueÈvenerdìnonmirompetei.mp3",
-					poster:"assets/Ligabue.png"
+					poster:"assets/Folk.jpg" 
+					
 				}
 			];
 

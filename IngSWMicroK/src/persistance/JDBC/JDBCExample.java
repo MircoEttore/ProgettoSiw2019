@@ -40,8 +40,13 @@ public class JDBCExample {
 			  System.out.println(tryLogin.getPassword());
 			  System.out.println(tryLogin.getCognome());
 			  */
-		/*	  Utente u = new Utente() ; 
-			  u.setNome("ciuccia");
+			  Utente u = new Utente() ;
+		      u.setNickname("asd");
+			  u.setNome("ciuc243a");
+			  u.setPassword("c234cia");
+			  u.setEmail("ci3424ia");
+			  u.setIndirizzo("c324cia");
+			  DatabaseManager.getInstance().getDaoFactory().getUtenteDAO().save(u);
 		/*	  CanzoneDao udao = DatabaseManager.getInstance().getDaoFactory().getCanzoneDao() ; 
 			 List<Canzone>c=new ArrayList();
 			  

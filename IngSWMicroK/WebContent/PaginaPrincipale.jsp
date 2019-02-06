@@ -116,13 +116,20 @@
 					  
 					 </section>
  
+ <div>
+ 
+ 
+ </div>
+ 
+ 
+ 
  <section id="Libreria" style="padding-left: 250px">
   <!--  <div class="featured">-->
    <div class="container">
     <div class="row">
      <div class="col">
       <div class="section_title text-center">
-       <h1>TOP FIVE</h1>
+       <h1>PLAYLIST PER GENERE</h1>
       </div>
       <div class="featured_list">
        <div id="jplayer_2" class="jp-jplayer"></div>
@@ -157,6 +164,7 @@
 	
 	</div>
 	</div>
+	
 	 <div id = "lettore">
   
 <div class="song" style="background-color: #2d3542">
@@ -188,7 +196,7 @@
              </div>
             </div>
             <div class="song_image ml-lg-auto order-lg-2 order-1">
-             <img src="images/song_1.jpg" alt="">
+             <img src="assets/Caparezza.jpg" alt="">
             </div>
            </div>
 
@@ -198,8 +206,7 @@
             <div class="player_progress_box">
              <div class="jp-current-time" role="timer" aria-label="time">00:00</div>
              <div class="song_info">
-              <div class="jp-artist" aria-label="title">Michael
-               Smith</div>
+              <div class="jp-artist" aria-label="title">Caparezza</div>
               <div class="jp-title" aria-label="title"></div>
              </div>
              <div class="jp-progress">
@@ -254,7 +261,7 @@
 	
 </c:if>
 				<c:if test="${username == null}">
-			<meta http-equiv="Refresh" content="0; http://192.168.43.197:8080/MicroKSiw2019_2/Home.html"/>
+			<meta http-equiv="Refresh" content="0; http://192.168.43.197:8080/IngSWMicroK/Home.html"/>
 				</c:if>	
 				
 			<!-- Bootstrap core JavaScript -->

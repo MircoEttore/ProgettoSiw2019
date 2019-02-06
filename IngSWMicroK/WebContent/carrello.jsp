@@ -165,7 +165,7 @@
 	
 </c:if>
 				<c:if test="${username == null}">
-			<meta http-equiv="Refresh" content="0; http://192.168.43.197:8080/MicroKSiw2019_2/Home.html"/>
+			<meta http-equiv="Refresh" content="0; http://192.168.43.197:8080/IngSWMicroK/Home.html"/>
 				</c:if>	
 </body>
 		<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script> 
