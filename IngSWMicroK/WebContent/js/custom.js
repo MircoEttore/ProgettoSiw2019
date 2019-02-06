@@ -295,7 +295,7 @@ $(document).ready(function()
 				{
 					title:"PLAYLIST METAL",
 					artist:"Ligabue",
-					album:"italy",
+					album:"ital",
 					mp3:"files/ironmaidenfearofthedark.mp3",
 					poster:"assets/MetalCopertina.jpg"
 				},
