@@ -45,16 +45,19 @@ public class UtenteDaoJDBC implements UtenteDao {
 				return 1;
 			else {
 				statement.executeUpdate();
+				Utente uu=findByPrimaryKeyq(utente.getEmail());
+				System.out.println(uu.getIdUtente());
+				
+				String insertCart = "INSERT INTO \"carrelloUtente\" (\"idUtente\") VALUES (?)" ; 
+				statement = connection.prepareStatement(insertCart);
+				statement.setInt(1, uu.getIdUtente());
+				statement.executeUpdate();
 			}
 				
-			
-			System.err.println(u.getEmail());
-
 			ResultSet resultSet = statement.getGeneratedKeys();
 			while (resultSet.next()) {
 				utente.setIdUtente(resultSet.getInt(1));
 			}
-			System.out.println(resultSet);
 			status = 0;
 		} catch (SQLException e) {
 			String message = e.getMessage();
