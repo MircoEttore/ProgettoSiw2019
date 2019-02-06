@@ -282,35 +282,35 @@ $(document).ready(function()
 					title:"PLAYLIST RAP",
 					artist:"PLAYLIST RAP",
 					album:"italy",
-					mp3:"files/LigabueÈvenerdìnonmirompetei.mp3",
+					mp3:"files/Ligabue.mp3",
 					poster:"assets/RapCopertina.jpg"
 				},
 				{
 					title:"PLAYLIST REVIVAL",
 					artist:"PLAYLIST REVIVALs",
 					album:"italy",
-					mp3:"/files/LigabueÈvenerdìnonmirompetei.mp3",
+					mp3:"files/Ligabue.mp3",
 					poster:"assets/Revival.jpg"
 				},
 				{
 					title:"PLAYLIST METAL",
 					artist:"Ligabue",
 					album:"italy",
-					mp3:"/files/LigabueÈvenerdìnonmirompetei.mp3",
+					mp3:"files/Ligabue.mp3",
 					poster:"assets/MetalCopertina.jpg"
 				},
 				{
 					title:"PLAYLISTR RAGGAE",
 					artist:"Ligabue",
 					album:"italy",
-					mp3:"/files/LigabueÈvenerdìnonmirompetei.mp3",
+					mp3:"files/Ligabue.mp3",
 					poster:"assets/RAGGAEcopertina.jpg"
 				},
 				{
 					title:"PLAYLIST FOLK",
 					artist:"PLAYLIST FOLK",
 					album:"italy",
-					mp3:"files/LigabueÈvenerdìnonmirompetei.mp3",
+					mp3:"files/Ligabue.mp3",
 					poster:"assets/Folk.jpg" 
 					
 				}
