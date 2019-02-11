@@ -6,6 +6,7 @@ public class Artista {
 	private String nomeArtista;
 	private int idArtista;
 	private String   pathImage;
+	private String TextBiografia;
 
 	public Artista () {
 		super() ;
@@ -41,6 +42,12 @@ public class Artista {
 	}
 	public void setPathImage(String pathImage) {
 		this.pathImage = pathImage;
+	}
+	public String getTextBiografia() {
+		return TextBiografia;
+	}
+	public void setTextBiografia(String textBiografia) {
+		TextBiografia = textBiografia;
 	}
 
 

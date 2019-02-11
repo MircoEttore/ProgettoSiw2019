@@ -47,10 +47,11 @@ public class ArtistaDaoJDBC implements ArtistaDao {
 
 			if (artistaPresente == false) {
 				statement.addBatch();
-				String insert = "insert into artista(nome,path_image_artista) values (?,?)";
+				String insert = "insert into artista(nome,path_image_artista,biografia) values (?,?,?)";
 				statement = connection.prepareStatement(insert);
 				statement.setString(1, artista.getNomeArtista());
 				statement.setString(2, artista.getPathImage());
+				statement.setString(3, artista.getTextBiografia());
 
 				statement.executeUpdate();
 				artistaPresente = false;
@@ -86,6 +87,7 @@ public class ArtistaDaoJDBC implements ArtistaDao {
 				artista.setIdArtista(result.getInt("idartista"));
 				artista.setNomeArtista(result.getString("nome"));
 				artista.setPathImage(result.getString("path_image_artista"));
+				artista.setTextBiografia(result.getString("biografia"));
 				artisti.add(artista);
 			}
 		} catch (SQLException e) {
@@ -148,6 +150,7 @@ public class ArtistaDaoJDBC implements ArtistaDao {
 				artista.setIdArtista(result.getInt("idartista"));
 				artista.setNomeArtista(result.getString("nome"));
 				artista.setPathImage(result.getString("path_image_artista"));
+				artista.setTextBiografia(result.getString("biografia"));
 				artisti.add(artista);
 			}
 		}
@@ -203,7 +206,8 @@ public class ArtistaDaoJDBC implements ArtistaDao {
 		    a.setIdArtista(results.getInt("idartista"));
 		    a.setNomeArtista(results.getString("nome"));
 		    a.setPathImage(results.getString("path_image_artista"));
-		 
+		    a.setTextBiografia(results.getString("biografia"));
+
 		   }
 		  } catch (Exception e) {
 		  } finally {
