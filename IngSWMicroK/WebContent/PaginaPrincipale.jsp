@@ -261,7 +261,8 @@
 	
 </c:if>
 				<c:if test="${username == null}">
-			<meta http-equiv="Refresh" content="0; http://192.168.43.197:8080/IngSWMicroK/Home.html"/>
+			<!--  <meta http-equiv="Refresh" content="0; http://192.168.43.197:8080/IngSWMicroK/Home.html"/> -->
+				<meta http-equiv="Refresh" content="0; http://localhost:8080/IngSWMicroK/Home.html"/>
 				</c:if>	
 				
 			<!-- Bootstrap core JavaScript -->

@@ -41,31 +41,28 @@
     <servlet-name>Search</servlet-name>
     <url-pattern>/search</url-pattern>
   </servlet-mapping>
-   <servlet>
-  <servlet-name>AddToCart</servlet-name>
-  <servlet-class>servlet.AddToCart</servlet-class>
- </servlet>
- <servlet-mapping>
-  <servlet-name>AddToCart</servlet-name>
-  <url-pattern>/addToCart</url-pattern>
- </servlet-mapping>
-  
   <servlet>
-  <servlet-name>Logout</servlet-name>
-  <servlet-class>servlet.Logout</servlet-class>
- </servlet>
- <servlet-mapping>
-  <servlet-name>Logout</servlet-name>
-  <url-pattern>/Logout</url-pattern>
- </servlet-mapping>
-  
+    <servlet-name>AddToCart</servlet-name>
+    <servlet-class>servlet.AddToCart</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AddToCart</servlet-name>
+    <url-pattern>/addToCart</url-pattern>
+  </servlet-mapping>
   <servlet>
-  <servlet-name>DeleteSong</servlet-name>
+    <servlet-name>Logout</servlet-name>
+    <servlet-class>servlet.Logout</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Logout</servlet-name>
+    <url-pattern>/Logout</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>DeleteSong</servlet-name>
     <servlet-class>servlet.DeleteSong</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>DeleteSong</servlet-name>
     <url-pattern>/delete</url-pattern>
   </servlet-mapping>
-  
 </web-app>

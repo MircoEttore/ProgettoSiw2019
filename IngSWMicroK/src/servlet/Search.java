@@ -32,11 +32,6 @@ public class Search extends HttpServlet {
 
 		if (search != null && !search.equals("")) {
 			request.setAttribute("search", search);
-			request.getRequestDispatcher("searchbar.jsp").forward(request, response);
-		}
-
-		else {
-			request.getRequestDispatcher("searchbar.jsp").forward(request, response);
 		}
 
 	}

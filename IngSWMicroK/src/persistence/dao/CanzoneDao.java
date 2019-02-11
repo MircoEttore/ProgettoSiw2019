@@ -21,6 +21,7 @@ public interface CanzoneDao{
 	List<Canzone> findForGenere(String genere);
 	List<Canzone> findTop5ForGenere(String genere);
 	void delete(Integer idCanzone, String email);
+//	void cercaStottostringa(String s);
 	
 	
 }

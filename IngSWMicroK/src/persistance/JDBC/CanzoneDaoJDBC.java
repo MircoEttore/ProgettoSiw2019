@@ -314,7 +314,7 @@ public List<Canzone> findTop5ForGenere(String genere) {
 	//	searchQuery=searchQuery.toUpperCase();
 		System.out.println("string : "+searchQuery);
 		ArrayList<Canzone> listaCanzoni = new ArrayList<>();
-	System.out.println(searchQuery);
+		System.out.println(searchQuery);
 		String[] someQueries = searchQuery.split(" ");
 		ArrayList<String> queries = new ArrayList<String>();
 		
@@ -393,4 +393,40 @@ public List<Canzone> findTop5ForGenere(String genere) {
 		
 		return false;
 	}
+	
+//	@Override
+//	public void cercaStottostringa (String s ) {
+//		 connection = this.dataSource.getConnection();
+//		 try {
+//				String insert = "SELECT * from canzone as c  WHERE c.titolo LIKE ? \r\n" + "";
+//				statement = connection.prepareStatement(insert);
+//				statement.setString(1, "%"+s+"%");
+//				ResultSet result = statement.executeQuery();
+//				
+//				
+//				while (result.next()) {
+//					Canzone canzone = new Canzone();
+//					canzone.setIdCanzone(result.getInt("idcanzone"));				
+//					canzone.setTitolo(result.getString("titolo"));
+//					canzone.setArtista(new Artista (result.getString("artista")));
+//					canzone.setGenere(result.getString("genere"));
+//					canzone.setAnno(result.getInt("anno"));
+//					canzone.setCasaDiscografica(result.getString("casadiscografica"));
+//					canzone.setIndiceDiGradimento(new IndiceDiGradimento(result.getInt("IndiceDiGradimento")));
+//					canzone.setUrl(result.getString("url"));
+//					canzone.setAlbum(result.getString("album"));
+//					canzone.setPrezzo(result.getDouble("prezzo"));
+//					System.out.println(canzone.getTitolo());
+//					}
+//				
+//			} catch (Exception e) {
+//				e.printStackTrace();
+//			} finally {
+//				try {
+//					connection.close();
+//				} catch (SQLException e) {
+//				}
+//			}
+//	}
+	
 }

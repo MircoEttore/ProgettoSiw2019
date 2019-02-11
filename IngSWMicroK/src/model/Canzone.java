@@ -196,7 +196,4 @@ public class Canzone {
 		this.buy_now = buy_now;
 	}
 	
-	
-
-
 }
