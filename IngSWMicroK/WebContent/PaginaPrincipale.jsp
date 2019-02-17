@@ -6,8 +6,8 @@
 <%@page import="model.Canzone"%>
 <%@page import="model.Artista"%>
 <%@page import="persistence.dao.ArtistaDao"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
 <%@page session="true"%>
 	
 <!DOCTYPE html>
@@ -20,8 +20,11 @@
 <meta name="author" content="">
 
 <title>Simple Sidebar - Start Bootstrap Template</title>
-<script src="js/jquery-3.2.1.min.js"></script>
 <script src="bootstrap-4.1.3//js/bootstrap.min.js"></script>
+ <script src="js/jquery-3.3.1.min.js"></script>
+
+<script type="text/javascript" src="js/prova.js"></script>
+
 <!-- Bootstrap core CSS -->
 <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
@@ -96,39 +99,56 @@
     				<li><a href="#Libreria">Libreria</a></li>
 			</ul>
 		</div>
+		
 		<div class="col-sm-10">
 				   <section id="Catalogo"style="padding-left: 300px ; padding-top:0px">
 					    <div class="container">
-					     <div class="row">
-						 
-					 <%List<Canzone> categories = DatabaseManager.getInstance().getDaoFactory().getCanzoneDao().findAll();
-					   ArtistaDao A=DatabaseManager.getInstance().getDaoFactory().getArtistaDAO();
+					    	 <div class="row" id="result2">
+						
+					 <%/*
+					 List<Canzone> categories = DatabaseManager.getInstance().getDaoFactory().getCanzoneDao().findAll();
+					 ArtistaDao A=DatabaseManager.getInstance().getDaoFactory().getArtistaDAO();
 						    for (Canzone song : categories) {
 							     Artista a=A.findByName(song.getArtista().getNomeArtista());
 							     out.println("<div class=\"col-sm-3 text-center\">"+"<img class=\"copertina\" alt=\"\" src=\""+a.getPathImage()+"\"><p>" + song.getTitolo() 
 							     + " </p><h2>"+ song.getArtista().getNomeArtista() +"</h3>" +"<p>"+song.getGenere()+"</p>"+"<a href=\"addToCart?id=" + (song.getIdCanzone())
 							     + "&from=PaginaPrincipale.jsp\" >"+"<i class=\"fa fa-shopping-cart\"></i>Add to cart</a></div>");
-						       }
-					    %>
+						       }*/
+					  %>
+				
 					   </div>
 					  </div>
 					 
 					  
 					 </section>
- 
- <div>
- 
- 
+
+<!--  
+ <div id="demo">
+  <button  type="button"  onclick="prova()" class="btn navbar-btn btn-danger"  value="Log Out">Prova</button>
  </div>
- 
- 
- 
+ <div>
+ <button onclick="numbers.forEach(myFunction)">Try it</button>
+<p>Prova
+
+
+</p>
+
+<c:forEach items="${listSong}" var="canzone" >
+	<p>titolo= ${canzone.titolo}</p>
+	<p>Genere= ${canzone.genere}</p>
+	<p>Anno= ${canzone.anno}</p>
+</c:forEach>
+
+
+ </div>
+ -->
  <section id="Libreria" style="padding-left: 250px">
   <!--  <div class="featured">-->
    <div class="container">
     <div class="row">
      <div class="col">
       <div class="section_title text-center">
+      <p id="demo5"></p>
        <h1>PLAYLIST PER GENERE</h1>
       </div>
       <div class="featured_list">
@@ -271,7 +291,6 @@
  <script src="vendor/jquery/jquery.min.js"></script>
  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
- <script src="js/jquery-3.3.1.min.js"></script>
  <script src="styles/bootstrap-4.1.2/popper.js"></script>
  <script src="styles/bootstrap-4.1.2/bootstrap.min.js"></script>
  <script src="plugins/greensock/TweenMax.min.js"></script>
@@ -287,6 +306,7 @@
  <script src="plugins/parallax-js-master/parallax.min.js"></script>
  <script src="plugins/scrollTo/jquery.scrollTo.min.js"></script>
  <script src="js/custom.js"></script>	
+			<script src="js/addCart.js"></script>
 				
 </body>
 <footer>

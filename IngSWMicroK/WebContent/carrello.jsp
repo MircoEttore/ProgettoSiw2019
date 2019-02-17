@@ -135,7 +135,8 @@
 									    out.println("<li class=\"row\"><form><span class=\"itemName\">"+song.getArtista().getNomeArtista()+"  "+song.getTitolo()+"</span></form>"
 									    		+"<form class=\"form-inline m-auto\"><span class=\"popbtn\"><a class=\"arrow\"></a></span></form>"
 									    		+ "<form class=\"form-inline m-auto\"><span class=\"price\">"+song.getPrezzo()
-									    		+"</span><span style=\"padding-left: 50px ; \"></span><button class=\"btn navbar-btn btn-danger\" onclick=\"location.href='/delete?cartCanzoneId="
+									    		+"</span><span style=\"padding-left: 50px ; \"></span><button class=\"btn navbar-btn btn-danger\" "
+									    		+"onclick=\"location.href='delete?cartCanzoneId="
 									    		+ song.getIdCanzone()+"&IdCart="+idCarrello+"&from=carrello.jsp' \" >rimuovi</button></form></li>");
 									
 									    

@@ -2,8 +2,6 @@ package model;
 
 import java.sql.Date;
 
-//import sun.util.calendar.LocalGregorianCalendar.Date;
-
 public class Evento {
 	
 	private String nomeEvento;
@@ -28,10 +26,12 @@ public class Evento {
 		this.prezzoEvento = prezzoEvento;
 	}
 	
-	public Evento(String nomeEvento, String LuogoEvento, Date dataEvento, double prezzoEvento) {
+	public Evento(String nomeEvento, String LuogoEvento, Artista artista, Date dataEvento, double prezzoEvento) {
 		this.nomeEvento = nomeEvento ; 
 		this.LuogoEvento = LuogoEvento ; 
 		this.dataEvento = dataEvento ; 
+		this.artista = artista ; 
+		this.prezzoEvento = prezzoEvento ; 
 	}
 
 	public String getNomeEvento() {

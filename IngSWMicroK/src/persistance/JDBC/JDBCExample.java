@@ -20,19 +20,25 @@ public class JDBCExample {
 		DAOFactory factory = DAOFactory.getDAOFactory(DAOFactory.POSTGRESQL); 
 		try {
 
-			Class.forName("org.postgresql.Driver");
+		Class.forName("org.postgresql.Driver");
 
-			Artista s = new Artista() ; 
-			s.setNomeArtista("sucsaaasaasaaaaaaa");
-			s.setPathImage("sucaas");
+		//	Artista s = new Artista() ; 
+		//	s.setNomeArtista("sucsaaasaasaaaaaaa");
+	//		s.setPathImage("sucaas");
 			
-			ArtistaDao adao = factory.getArtistaDAO() ; 
-			System.out.println(DatabaseManager.getInstance().getDaoFactory().getUtenteDAO().CercaIdCarrello( 26)	+"-Sono io "	)	;
-			System.out.println(adao.findByName("Ligabue").getPathImage());
-			List<Canzone>lista=DatabaseManager.getInstance().getDaoFactory().getUtenteDAO().CercaCanzoniCarrello(11);
-			System.out.println("Size:"+lista.size());
-			
-			String p;
+		//	ArtistaDao adao = factory.getArtistaDAO() ; 
+		///	System.out.println(DatabaseManager.getInstance().getDaoFactory().getUtenteDAO().CercaIdCarrello( 26)	+"-Sono io "	)	;
+		//	System.out.println(adao.findByName("Ligabue").getPathImage());
+			//List<Canzone>lista=DatabaseManager.getInstance().getDaoFactory().getUtenteDAO().CercaCanzoniCarrello(11);
+		//	System.out.println("Size:"+lista.size());
+			// TODO Auto-generated method stub
+			DatabaseManager.getInstance().getDaoFactory().getUtenteDAO().RimuoviDalCarrello(1, 1);
+//			
+//			for (Utente U:u) {
+//			U.setPassword("ciao");
+//				DatabaseManager.getInstance().getDaoFactory().getUtenteDAO().update(U);
+//			}
+		//	String p;
 /*
 			  Utente tryLogin= DatabaseManager.getInstance().getDaoFactory().getUtenteDAO().findPrimaryKey("a", "a") ; 
 			 
@@ -40,13 +46,7 @@ public class JDBCExample {
 			  System.out.println(tryLogin.getPassword());
 			  System.out.println(tryLogin.getCognome());
 			  */
-			  Utente u = new Utente() ;
-		      u.setNickname("asd");
-			  u.setNome("ciuc243a");
-			  u.setPassword("c234cia");
-			  u.setEmail("ci3424ia");
-			  u.setIndirizzo("c324cia");
-			  DatabaseManager.getInstance().getDaoFactory().getUtenteDAO().save(u);
+			
 		/*	  CanzoneDao udao = DatabaseManager.getInstance().getDaoFactory().getCanzoneDao() ; 
 			 List<Canzone>c=new ArrayList();
 			  

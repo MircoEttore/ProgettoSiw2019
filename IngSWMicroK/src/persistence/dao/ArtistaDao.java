@@ -6,11 +6,9 @@ import model.Artista;
 
 public interface ArtistaDao {	
 	public void save(Artista artista) throws SQLException;  // Create
-//	public Canzone findByPrimaryKey(String matricola);     // Retrieve
 	public List<Artista> findAll();       
 	public void update(Artista artista); //Update
 	public void delete(Artista artista); //Delete	
-	List<Artista> findArtista(String searchQuery);
-	Artista findByName(String nome);
-	
+	public List<Artista> findArtista(String searchQuery);
+	public Artista findByName(String nome);
 }

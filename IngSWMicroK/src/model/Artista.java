@@ -1,5 +1,9 @@
 package model;
 
+import java.sql.SQLException;
+
+import persistance.DatabaseManager;
+
 public class Artista {
 	
 	
@@ -17,11 +21,21 @@ public class Artista {
 		this.idArtista = idArtista;
 		this.pathImage=path;
 	}
+
+	
 	public Artista(String nomeArtista) {
 		super();
 		this.nomeArtista = nomeArtista;
+		try {
+			DatabaseManager.getInstance().getDaoFactory().getArtistaDAO().save(this);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		this.idArtista = DatabaseManager.getInstance().getDaoFactory().getArtistaDAO().findByName(nomeArtista).getIdArtista() ; 
 	}
-
+	
+	
+	
 	public String getNomeArtista() {
 		return nomeArtista;
 	}

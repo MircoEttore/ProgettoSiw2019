@@ -1,4 +1,50 @@
-$(document).ready(function(){
+
+function prova() {
+	var xhttp = new XMLHttpRequest();
+
+	  xhttp.onreadystatechange = function() {
+	    if (this.readyState == 4 && this.status == 200) {
+	     document.getElementById("demo").innerHTML = this.responseText;
+	    }
+	  };
+	  xhttp.open("GET", "ajax_info.txt", true);
+	  xhttp.send();
+		alert("Inserire un indirizzo email corretto.");
+
+}
+
+
+demoP = document.getElementById("demo5");
+//var numbers = [4, 9, 16, 25];
+  var canzone = [	
+	  				{	
+						titolo:"sogni" ,
+						artista:"Ligabue",
+						genere :"Rock",
+						prezzo :12.00,
+	  				},
+	  				{	
+						titolo:"sogni" ,
+						artista:"Ligabue",
+						genere :"Rock",
+						prezzo :12.00,
+	  				},
+	  				{	
+						titolo:"sogni" ,
+						artista:"Ligabue",
+						genere :"Rock",
+						prezzo :12.00,
+	  				}
+				]
+
+function myFunction(item, index) {
+  demoP.innerHTML = demoP.innerHTML + "index[" + index + "]: " + item + "<br>"; 
+}
+
+
+
+
+/*$(document).ready(function(){
     
 	$(".largeGrid").click(function(){											
     $(this).find('a').addClass('active');
@@ -154,7 +200,7 @@ $(document).ready(function(){
 	})
 	
 	/* ----  Image Gallery Carousel   ---- */
-	function makeCarousel(el){
+/*	function makeCarousel(el){
 	
 		
 		var carousel = $(el).find('.carousel ul');
@@ -260,4 +306,4 @@ $(document).ready(function(){
 			
 		}, 1000);
 	});
-});
+});*/

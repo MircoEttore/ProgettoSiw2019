@@ -2,12 +2,8 @@
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
   <display-name>MicroKSiw2019_2</display-name>
   <welcome-file-list>
-    <welcome-file>index.html</welcome-file>
-    <welcome-file>index.htm</welcome-file>
-    <welcome-file>index.jsp</welcome-file>
-    <welcome-file>default.html</welcome-file>
-    <welcome-file>default.htm</welcome-file>
-    <welcome-file>default.jsp</welcome-file>
+    <welcome-file>Home.html</welcome-file>
+
   </welcome-file-list>
   <servlet>
     <servlet-name>Login</servlet-name>
@@ -64,5 +60,37 @@
   <servlet-mapping>
     <servlet-name>DeleteSong</servlet-name>
     <url-pattern>/delete</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>AggiungiArtista</servlet-name>
+    <servlet-class>servlet.AggiungiArtista</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AggiungiArtista</servlet-name>
+    <url-pattern>/AggiungiArtista</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>aggiungiEvento</servlet-name>
+    <servlet-class>servlet.AggiungiEvento</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>aggiungiEvento</servlet-name>
+    <url-pattern>/aggiungiEvento</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>AggiungiCanzone</servlet-name>
+    <servlet-class>servlet.AggiungiCanzone</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AggiungiCanzone</servlet-name>
+    <url-pattern>/AggiungiCanzone</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>Prodotti</servlet-name>
+    <servlet-class>servlet.Prodotti</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Prodotti</servlet-name>
+    <url-pattern>/prodotti</url-pattern>
   </servlet-mapping>
 </web-app>

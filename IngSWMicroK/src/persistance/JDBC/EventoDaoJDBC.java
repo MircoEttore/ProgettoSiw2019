@@ -1,6 +1,7 @@
 package persistance.JDBC;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -9,6 +10,7 @@ import java.util.List;
 import model.Artista;
 import model.Evento;
 import persistance.DataSource;
+import persistance.DatabaseManager;
 import persistence.dao.EventoDao;
 
 public class EventoDaoJDBC implements EventoDao{
@@ -35,27 +37,32 @@ public class EventoDaoJDBC implements EventoDao{
 	}
 
 	private void addEvento(Evento evento) {
+		connection = this.dataSource.getConnection();
 		try {
+			
 			Boolean eventoPresente = false;
-			connection = this.dataSource.getConnection();
-			String sql = "SELECT Nome FROM evento WHERE idevento= ?";
+			String sql = "SELECT * FROM evento WHERE nomeevento= ?";
 			this.statement = this.connection.prepareStatement(sql);
 			statement.setString(1, evento.getNomeEvento());
+			System.out.println(evento.getNomeEvento());
 			ResultSet rs = statement.executeQuery();
 			while (rs.next()) {
 				String nomeEvento = rs.getString("nomeevento");
-				eventoPresente = true;
-				System.out.println(nomeEvento);
+				Date dataEvento = rs.getDate("data") ; 
+				if (nomeEvento.equals(evento.getNomeEvento()) && dataEvento.equals(evento.getDataEvento()))
+					eventoPresente = true;
 			}
-
-			if (eventoPresente == false) {
+			if (eventoPresente == false ) {
 				statement.addBatch();
-				String insert = "insert into evento(nomeevento) values (?)";
+				String insert = "insert into evento(nomeevento , data , luogo , idartista , prezzo) values (?,?,?,?,?)";
 				statement = connection.prepareStatement(insert);
-				statement.setString(5, evento.getNomeEvento());
+				statement.setString(1 , evento.getNomeEvento());
+				statement.setDate(2 , evento.getDataEvento());
+				statement.setString(3 , evento.getLuogoEvento());
+				System.err.println("id artista "+evento.getArtista().getIdArtista());
+				statement.setInt(4, evento.getArtista().getIdArtista());
+				statement.setDouble(5 , evento.getPrezzoEvento());
 				statement.executeUpdate();
-				eventoPresente = false;
-				rs.close();
 			}
 
 		} catch (Exception e) {

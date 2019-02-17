@@ -9,7 +9,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import model.Artista;
-import model.Utente;
 import persistance.DatabaseManager;
 
 
@@ -26,7 +25,7 @@ public class AggiungiArtista extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Artista registrazioneArtista = new Artista();
 		registrazioneArtista.setNomeArtista(request.getParameter("nome"));
-		registrazioneArtista.setPathImage(request.getParameter("pathImage"));
+		registrazioneArtista.setPathImage(request.getParameter("path"));
 		registrazioneArtista.setTextBiografia(request.getParameter("biografia"));
 	
 		System.out.println(registrazioneArtista.getNomeArtista()+" "+registrazioneArtista.getTextBiografia());
