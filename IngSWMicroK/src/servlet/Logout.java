@@ -22,7 +22,7 @@ public class Logout extends HttpServlet {
 		//req.getSession().setAttribute("username", null);
 System.out.println("Ciao");
   request.getSession().invalidate();
-  response.sendRedirect("Home.html");}
+  response.sendRedirect("index.html");}
  //}
 
  /**

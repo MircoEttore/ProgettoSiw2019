@@ -28,7 +28,7 @@ public class LoginServlet extends HttpServlet {
 			throws ServletException, IOException {
 
 
- RequestDispatcher dispatcher = request.getRequestDispatcher("Home.html");
+ RequestDispatcher dispatcher = request.getRequestDispatcher("index.html");
 		// dispatcher.forward(request, response);
 	}
 
@@ -47,11 +47,11 @@ public class LoginServlet extends HttpServlet {
 					req.getSession().setAttribute("username", tryLogin.getEmail());
 					req.getSession().setAttribute("userId", tryLogin.getIdUtente());
 		
-				resp.sendRedirect("PaginaPrincipale.jsp");
+				resp.sendRedirect("paginaPrincipale.jsp");
 				resp.setStatus(HttpServletResponse.SC_OK);
 			} else {
 				req.getSession().setAttribute("loginMessage", "Wrong username or password");
-				resp.sendRedirect("LoginPage.jsp");
+				resp.sendRedirect("loginPage.jsp");
 				resp.setStatus(HttpServletResponse.SC_OK);
 			}
 	}

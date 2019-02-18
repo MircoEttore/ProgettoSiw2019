@@ -14,7 +14,7 @@
 									//s+='id:'+listproducts[i].idCanzone+'<br>Name:'+listproducts[i].titolo+'<br>Name:'+listproducts[i].Album+'<br>:::::::::::::::::::::::::::::::::<br>';
 									s+='<div class="col-sm-3 text-center">'+'<img class="copertina" alt="" src="'+listproducts[i].url+'"><p>' +
 											+ listproducts[i].titolo +'</p><h2>'+ listproducts[i].artista.nomeArtista +'</h3><p>'+listproducts[i].genere+'</p>'+'<a href="addToCart?id="' + 
-									listproducts[i].idCanzone+'&from=PaginaPrincipale.jsp><i class="fa fa-shopping-cart"></i>Add to cart</a></div>';
+									listproducts[i].idCanzone+'&from=paginaPrincipale.jsp><i class="fa fa-shopping-cart"></i>Add to cart</a></div>';
 								}
 								document.getElementById('result2').innerHTML=s;
 							}
@@ -52,7 +52,7 @@
 										//s+='id:'+listproducts[i].idCanzone+'<br>Name:'+listproducts[i].titolo+'<br>Name:'+listproducts[i].Album+'<br>:::::::::::::::::::::::::::::::::<br>';
 										s+='<div class="col-sm-3 text-center">'+'<img class="copertina" alt="" src="'+listproducts[i].url+'"><p>' +
 												+ listproducts[i].titolo +'</p><h2>'+ listproducts[i].artista.nomeArtista +'</h3><p>'+listproducts[i].genere+'</p>'+'<a href="addToCart?id="' + 
-										listproducts[i].idCanzone+'&from=PaginaPrincipale.jsp><i class="fa fa-shopping-cart"></i>Add to cart</a></div>';
+										listproducts[i].idCanzone+'&from=paginaPrincipale.jsp><i class="fa fa-shopping-cart"></i>Add to cart</a></div>';
 									}
 									document.getElementById('result2').innerHTML=s;
 								}

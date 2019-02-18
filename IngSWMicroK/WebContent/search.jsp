@@ -16,7 +16,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>--MicroK--MusicStore--</title>
   
 <link  href="css/searchbar.css" rel="stylesheet" type="text/css">
 <link href="bootstrap-4.1.3/css/bootstrap.min.css" rel="stylesheet"> 

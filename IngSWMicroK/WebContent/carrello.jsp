@@ -22,7 +22,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>Simple Sidebar - Start Bootstrap Template</title>
+<title>--MicroK--MusicStore--</title>
 <script src="js/jquery-3.2.1.min.js"></script>
 <script src="bootstrap-4.1.3//js/bootstrap.min.js"></script>
 <!-- Bootstrap core CSS -->
@@ -166,7 +166,7 @@
 	
 </c:if>
 				<c:if test="${username == null}">
-			<meta http-equiv="Refresh" content="0; http://192.168.43.197:8080/IngSWMicroK/Home.html"/>
+			<meta http-equiv="Refresh" content="0; http://192.168.43.197:8080/IngSWMicroK/index.html"/>
 				</c:if>	
 </body>
 		<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script> 

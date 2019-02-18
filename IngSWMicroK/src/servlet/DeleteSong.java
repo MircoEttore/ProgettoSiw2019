@@ -32,7 +32,7 @@ System.out.println("SONO DENTRO LA SRVET");
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		request.getRequestDispatcher("LoginPage.jsp").forward(request, response);
+		request.getRequestDispatcher("loginPage.jsp").forward(request, response);
 }
 
 }

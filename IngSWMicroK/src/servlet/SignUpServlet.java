@@ -47,7 +47,7 @@ public class SignUpServlet extends HttpServlet {
 			break;
 		}
 
-		this.getServletContext().getRequestDispatcher("/LoginPage.jsp").forward(request, response);
+		this.getServletContext().getRequestDispatcher("/loginPage.jsp").forward(request, response);
 	}
 	}
 	

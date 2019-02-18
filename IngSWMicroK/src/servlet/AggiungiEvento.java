@@ -56,7 +56,7 @@ public class AggiungiEvento extends HttpServlet {
 			e1.printStackTrace();
 		}  
 		
-		this.getServletContext().getRequestDispatcher("/LoginPage.jsp").forward(request, response);
+		this.getServletContext().getRequestDispatcher("/loginPage.jsp").forward(request, response);
 
 	}
 	

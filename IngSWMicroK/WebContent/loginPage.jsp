@@ -35,7 +35,7 @@ href="fontawesome-free-5.3.1-web/css/all.css" integrity="sha384-mzrmE5qonljUremF
 
 				</div>
 				<div class="card-body">
-					<form method="POST" class="form-horizontal" action="LoginServlet">
+					<form method="POST" class="form-horizontal" action="loginServlet">
 						<div class="input-group form-group">
 							<div class="input-group-prepend">
 								<span class="input-group-text"><i class="fas fa-user"></i></span>

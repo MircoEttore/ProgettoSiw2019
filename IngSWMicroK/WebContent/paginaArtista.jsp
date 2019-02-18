@@ -9,7 +9,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>Simple Sidebar - Start Bootstrap Template</title>
+<title>--MicroK--MusicStore--</title>
 <script src="js/jquery-3.2.1.min.js"></script>
 <script src="bootstrap-4.1.3//js/bootstrap.min.js"></script>
 <!-- Bootstrap core CSS -->

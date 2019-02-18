@@ -19,7 +19,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>Simple Sidebar - Start Bootstrap Template</title>
+<title>--MicroK--MusicStore--</title>
 <script src="bootstrap-4.1.3//js/bootstrap.min.js"></script>
  <script src="js/jquery-3.3.1.min.js"></script>
 
@@ -94,7 +94,7 @@
 		<div class="col-sm-2" style="background-color:#2d3542 ">
 			<ul class="sidebar-nav">
 				    <li class="sidebar-brand"><a href="#">Home</a></li>
-    				<li><a href="Profilo.jsp">Profilo</a></li>
+    				<li><a href="profilo.jsp">Profilo</a></li>
     				<li><a href="#Catalogo">Catalogo Musicale</a></li>
     				<li><a href="#Libreria">Libreria</a></li>
 			</ul>
@@ -112,7 +112,7 @@
 							     Artista a=A.findByName(song.getArtista().getNomeArtista());
 							     out.println("<div class=\"col-sm-3 text-center\">"+"<img class=\"copertina\" alt=\"\" src=\""+a.getPathImage()+"\"><p>" + song.getTitolo() 
 							     + " </p><h2>"+ song.getArtista().getNomeArtista() +"</h3>" +"<p>"+song.getGenere()+"</p>"+"<a href=\"addToCart?id=" + (song.getIdCanzone())
-							     + "&from=PaginaPrincipale.jsp\" >"+"<i class=\"fa fa-shopping-cart\"></i>Add to cart</a></div>");
+							     + "&from=paginaPrincipale.jsp\" >"+"<i class=\"fa fa-shopping-cart\"></i>Add to cart</a></div>");
 						       }*/
 					  %>
 				
@@ -282,7 +282,7 @@
 </c:if>
 				<c:if test="${username == null}">
 			<!--  <meta http-equiv="Refresh" content="0; http://192.168.43.197:8080/IngSWMicroK/Home.html"/> -->
-				<meta http-equiv="Refresh" content="0; http://localhost:8080/IngSWMicroK/Home.html"/>
+				<meta http-equiv="Refresh" content="0; http://locahost:8080/IngSWMicroK/index.html"/>
 				</c:if>	
 				
 			<!-- Bootstrap core JavaScript -->

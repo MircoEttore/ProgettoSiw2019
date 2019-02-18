@@ -2,7 +2,7 @@
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
   <display-name>MicroKSiw2019_2</display-name>
   <welcome-file-list>
-    <welcome-file>Home.html</welcome-file>
+    <welcome-file>index.html</welcome-file>
 
   </welcome-file-list>
   <servlet>
@@ -11,7 +11,7 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>Login</servlet-name>
-    <url-pattern>/LoginServlet</url-pattern>
+    <url-pattern>/loginServlet</url-pattern>
   </servlet-mapping>
   <servlet>
     <servlet-name>SignUpServlet</servlet-name>
