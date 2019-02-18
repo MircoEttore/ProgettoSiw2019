@@ -3,41 +3,43 @@
   <display-name>MicroKSiw2019_2</display-name>
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
-
   </welcome-file-list>
+  
+  <!--Inizio Login -->
   <servlet>
-    <servlet-name>Login</servlet-name>
+    <servlet-name>login</servlet-name>
     <servlet-class>servlet.LoginServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>Login</servlet-name>
+    <servlet-name>login</servlet-name>
     <url-pattern>/loginServlet</url-pattern>
   </servlet-mapping>
+    <!--Fine Login -->
+  
+    <!--Inizio Registrazione -->
   <servlet>
-    <servlet-name>SignUpServlet</servlet-name>
+    <servlet-name>signUpServlet</servlet-name>
     <servlet-class>servlet.SignUpServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>SignUpServlet</servlet-name>
-    <url-pattern>/SignUpServlet</url-pattern>
+    <servlet-name>signUpServlet</servlet-name>
+    <url-pattern>/signUpServlet</url-pattern>
   </servlet-mapping>
   <servlet>
-    <servlet-name>Singup</servlet-name>
-    <servlet-class>servlet.Singup</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>Singup</servlet-name>
-    <url-pattern>/Singup</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <servlet-name>Search</servlet-name>
+      <!--Fine Registrazione -->
+  
+    <!--Inizio Ricerca -->
+    <servlet-name>search</servlet-name>
     <servlet-class>servlet.Search</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>Search</servlet-name>
+    <servlet-name>search</servlet-name>
     <url-pattern>/search</url-pattern>
   </servlet-mapping>
   <servlet>
+    <!-- Fine Ricerca -->
+    
+    
     <servlet-name>AddToCart</servlet-name>
     <servlet-class>servlet.AddToCart</servlet-class>
   </servlet>

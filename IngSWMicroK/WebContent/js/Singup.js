@@ -69,7 +69,7 @@ function checkPasswordMatch() {
 	}
 	//INVIA IL signup_form_data
 	else {
-		document.signup_form_data.action = "SignUpServlet";
+		document.signup_form_data.action = "signUpServlet";
 		document.signup_form_data.submit();
 	}
 }
@@ -137,7 +137,7 @@ function sendData() {
 	
 	$.ajax({
 		type : "POST",
-		url : "SignUpServlet",
+		url : "signUpServlet",
 		datatype : "json",
 		data : {
 			toModify : JSON.stringify(jsonUser),

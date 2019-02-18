@@ -76,7 +76,7 @@
 
 					<div class="col-md-6 col-xl-5 mb-4">
 						<!--Form-->
-						<form method="POST" id="signup_form_data" name="signup_form_data" action="SignUpServlet">
+						<form method="POST" id="signup_form_data" name="signup_form_data" action="signUpServlet">
 							<div class="card wow fadeInRight" data-wow-delay="0.3s">
 								<div class="card-body">
 									<!--Header-->
