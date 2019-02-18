@@ -26,7 +26,8 @@ public class PostgresDAOFactory extends DAOFactory {
 			//dataSource=new DataSource("jdbc:postgresql://localhost:5432/postgres","postgres","postgres");
 		//	dataSource=new DataSource("jdbc:postgresql://192.168.1.4:5432/Database_MicroK","postgres","postgres");
 		//	dataSource=new DataSource("jdbc:postgresql://37.183.87.125:5432/postgres","postgres","password");
-			dataSource=new DataSource("jdbc:postgresql://localhost:5432/Database_MicroK","postgres","postgres");
+			dataSource=new DataSource("jdbc:postgresql://192.168.43.197:5432/Database_MicroK","postgres","postgres");
+		//	dataSource=new DataSource("jdbc:postgresql://localhost:5432/Database_MicroK","postgres","postgres");
 
 		} 
 		catch (Exception e) {

@@ -1,4 +1,3 @@
-
 package servlet;
 
 import java.io.IOException;
@@ -11,10 +10,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.google.gson.Gson;
 
-import javafx.scene.chart.PieChart.Data;
-import model.Artista;
-import model.Canzone;
-import model.IndiceDiGradimento;
 import persistance.DatabaseManager;
 import persistence.dao.ArtistaDao;
 import persistence.dao.CanzoneDao;

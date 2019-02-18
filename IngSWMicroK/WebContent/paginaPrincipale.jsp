@@ -75,7 +75,7 @@
      <div class="pull-left">
       <ul class="nav navbar-nav">
      
-     <p>Sei loggato come ${username}</p>
+     <p>Benvenuto ${username}</p>
      
    <li><button  type="button"  onclick="location.href='Logout?logout=true' " class="btn navbar-btn btn-danger"  value="Log Out">Log Out</button></li>
         
