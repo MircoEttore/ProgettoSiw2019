@@ -47,9 +47,8 @@
 <link rel="stylesheet" type="text/css" href="styles/responsive.css">
 
 </head>
-<body style="background-color: #092b10; color: white;">
+<body style="background-color: #313947 ; color: white; ">
 	<c:if test="${username != null}">
-
 
 		<!-- inizio navbar -->
 		<div class="row">
@@ -144,9 +143,9 @@
 												+ "<form class=\"form-inline m-auto\"><span class=\"popbtn\"><a class=\"arrow\"></a></span></form>"
 												+ "<form class=\"form-inline m-auto\"><span class=\"price\">" + song.getPrezzo()
 												+ "</span><span style=\"padding-left: 50px ; \"></span><button class=\"btn navbar-btn btn-danger\" "
-												+ "onclick=\"location.href='delete?cartCanzoneId=" + song.getIdCanzone() + "&IdCart="
-												+ idCarrello + "&from=carrello.jsp' \" >rimuovi</button></form></li>");
-
+												+"onclick=\"location.href='delete?cartCanzoneId="
+									    		+ song.getIdCanzone()+"&IdCart="+idCarrello+"&from=carrello.jsp' \" >rimuovi</button></form></li>");
+									
 										//out.print("<a href=\"delete?cartCanzoneId=" + song.getIdCanzone()+"&IdCart="+idCarrello+"&from=carrello.jsp\" class=\"btn btn-default add-to-cart\">");
 										System.out.print("1111");
 									}
