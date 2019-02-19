@@ -11,9 +11,9 @@
 
 <title>--MicroK--MusicStore--</title>
 <script src="js/jquery-3.2.1.min.js"></script>
-<script src="bootstrap-4.1.3//js/bootstrap.min.js"></script>
+<script src="bootstrap-4.1.3/js/bootstrap.min.js"></script>
 <!-- Bootstrap core CSS -->
-<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="themes_reference/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
 <!-- Custom styles for this template -->
    <link  href="css/searchbar.css" rel="stylesheet" type="text/css">
@@ -120,8 +120,8 @@
 	<!-- /#wrapper -->
 
 	<!-- Bootstrap core JavaScript -->
-	<script src="vendor/jquery/jquery.min.js"></script>
-	<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+	<script src="themes_reference/vendor/jquery/jquery.min.js"></script>
+	<script src="themes_reference/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 <script src="js/jquery-3.3.1.min.js"></script>
 <script src="styles/bootstrap-4.1.2/popper.js"></script>
 <script src="styles/bootstrap-4.1.2/bootstrap.min.js"></script>

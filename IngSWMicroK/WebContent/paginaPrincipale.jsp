@@ -20,38 +20,27 @@
 <meta name="author" content="">
 
 <title>--MicroK--MusicStore--</title>
-<script src="bootstrap-4.1.3//js/bootstrap.min.js"></script>
- <script src="js/jquery-3.3.1.min.js"></script>
+	<script src="js/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="js/prova.js"></script>
+	<script src="bootstrap-4.1.3/js/bootstrap.min.js"></script>
 
-<script type="text/javascript" src="js/prova.js"></script>
-
-<!-- Bootstrap core CSS -->
-<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
 <!-- Custom styles for this template -->
 <link href="css/searchbar.css" rel="stylesheet" type="text/css">
 
 <link href="css/simple-sidebar.css" rel="stylesheet">
 
-<link href="css/searchbar.css" rel="stylesheet" type="text/css">
-
-
-<link rel="stylesheet" type="text/css"
-	href="styles/bootstrap-4.1.2/bootstrap.min.css">
+<link rel="stylesheet" type="text/css"	href="styles/bootstrap-4.1.2/bootstrap.min.css">
 	
-<link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css"
-	rel="stylesheet" type="text/css">
-<link rel="stylesheet" type="text/css"
-	href="plugins/OwlCarousel2-2.3.4/owl.carousel.css">
-<link rel="stylesheet" type="text/css"
-	href="plugins/OwlCarousel2-2.3.4/owl.theme.default.css">
-<link rel="stylesheet" type="text/css"
-	href="plugins/OwlCarousel2-2.3.4/animate.css">
+<link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css"	rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css"	href="plugins/OwlCarousel2-2.3.4/owl.carousel.css">
+<link rel="stylesheet" type="text/css"	href="plugins/OwlCarousel2-2.3.4/owl.theme.default.css">
+<link rel="stylesheet" type="text/css"	href="plugins/OwlCarousel2-2.3.4/animate.css">
 <link rel="stylesheet" type="text/css" href="styles/main_styles.css">
 <link rel="stylesheet" type="text/css" href="styles/responsive.css">
 
 </head>
-<body style="background-color: #313947 ; color: white; ">
+<body style="background-color:#092b10 ; color: white; ">
 	<c:if test="${username != null}">
 	
 
@@ -66,8 +55,8 @@
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="search"  > 
 			<button class="btn btn-outline-success my-20 my-sm-10" type="submit">Search</button>
     </form>
-    <form class="form-inline m-5" action="">
-					<button class="transparentButton" onclick="location.href='carrello.jsp'">
+    <form class="form-inline m-5" action="" >
+					<button type="button" class="transparentButton" onclick="location.href='carrello.jsp' ">
 						<i class="fa fa-shopping-cart prefix white-text active"></i>
 					</button>
 				</form>
@@ -77,7 +66,7 @@
      
      <p>Benvenuto ${username}</p>
      
-   <li><button  type="button"  onclick="location.href='Logout?logout=true' " class="btn navbar-btn btn-danger"  value="Log Out">Log Out</button></li>
+   <li><button  type="button"  onclick="location.href='logout?logout=true' " class="btn navbar-btn btn-danger"  value="Log Out">Log Out</button></li>
         
       </ul>
      </div>
@@ -112,7 +101,7 @@
 							     Artista a=A.findByName(song.getArtista().getNomeArtista());
 							     out.println("<div class=\"col-sm-3 text-center\">"+"<img class=\"copertina\" alt=\"\" src=\""+a.getPathImage()+"\"><p>" + song.getTitolo() 
 							     + " </p><h2>"+ song.getArtista().getNomeArtista() +"</h3>" +"<p>"+song.getGenere()+"</p>"+"<a href=\"addToCart?id=" + (song.getIdCanzone())
-							     + "&from=paginaPrincipale.jsp\" >"+"<i class=\"fa fa-shopping-cart\"></i>Add to cart</a></div>");
+							     + "&from=paginaPrincipale.jsp" >"+"<i class=\"fa fa-shopping-cart\"></i>Add to cart</a></div>");
 						       }*/
 					  %>
 				
@@ -216,7 +205,7 @@
              </div>
             </div>
             <div class="song_image ml-lg-auto order-lg-2 order-1">
-             <img src="assets/Caparezza.jpg" alt="">
+             <img src="assets/artists/Caparezza.jpg" alt="">
             </div>
            </div>
 
@@ -282,14 +271,14 @@
 </c:if>
 				<c:if test="${username == null}">
 			<!--  <meta http-equiv="Refresh" content="0; http://192.168.43.197:8080/IngSWMicroK/Home.html"/> -->
-				<meta http-equiv="Refresh" content="0; http://locahost:8080/IngSWMicroK/index.html"/>
+				<meta http-equiv="Refresh" content="0; http://localhost:8080/IngSWMicroK/index.html"/>
 				</c:if>	
 				
 			<!-- Bootstrap core JavaScript -->
- <script src="vendor/jquery/jquery.min.js"></script>
- <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
- <script src="vendor/jquery/jquery.min.js"></script>
- <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+ <script src="themes_reference/vendor/jquery/jquery.min.js"></script>
+ <script src="themes_reference/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+ <script src="themes_reference/vendor/jquery/jquery.min.js"></script>
+ <script src="themes_reference/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
  <script src="styles/bootstrap-4.1.2/popper.js"></script>
  <script src="styles/bootstrap-4.1.2/bootstrap.min.js"></script>
@@ -306,7 +295,7 @@
  <script src="plugins/parallax-js-master/parallax.min.js"></script>
  <script src="plugins/scrollTo/jquery.scrollTo.min.js"></script>
  <script src="js/custom.js"></script>	
-			<script src="js/addCart.js"></script>
+<script src="js/addCart.js"></script>
 				
 </body>
 <footer>
