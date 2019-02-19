@@ -20,6 +20,7 @@
 <meta name="author" content="">
 
 <title>--MicroK--MusicStore--</title>
+
 	<script src="js/jquery-3.3.1.min.js"></script>
 	<script type="text/javascript" src="js/prova.js"></script>
 	<script src="bootstrap-4.1.3/js/bootstrap.min.js"></script>

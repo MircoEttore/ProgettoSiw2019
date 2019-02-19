@@ -23,10 +23,11 @@
 <meta name="author" content="">
 
 <title>--MicroK--MusicStore--</title>
-<script src="js/jquery-3.2.1.min.js"></script>
-<script src="bootstrap-4.1.3//js/bootstrap.min.js"></script>
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="bootstrap-4.1.3/js/bootstrap.min.js"></script>
+
 <!-- Bootstrap core CSS -->
-<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="themes_reference/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
 <!-- Custom styles for this template -->
 <link href="css/searchbar.css" rel="stylesheet" type="text/css">
@@ -36,17 +37,12 @@
 <link href="css/searchbar.css" rel="stylesheet" type="text/css">
 
 
-<link rel="stylesheet" type="text/css"
-	href="styles/bootstrap-4.1.2/bootstrap.min.css">
+<link rel="stylesheet" type="text/css"	href="styles/bootstrap-4.1.2/bootstrap.min.css">
 
 <link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css"
-	rel="stylesheet" type="text/css">
-<link rel="stylesheet" type="text/css"
-	href="plugins/OwlCarousel2-2.3.4/owl.carousel.css">
-<link rel="stylesheet" type="text/css"
-	href="plugins/OwlCarousel2-2.3.4/owl.theme.default.css">
-<link rel="stylesheet" type="text/css"
-	href="plugins/OwlCarousel2-2.3.4/animate.css">
+	rel="stylesheet" type="text/css"><link rel="stylesheet" type="text/css"	href="plugins/OwlCarousel2-2.3.4/owl.carousel.css">
+<link rel="stylesheet" type="text/css"	href="plugins/OwlCarousel2-2.3.4/owl.theme.default.css">
+<link rel="stylesheet" type="text/css"	href="plugins/OwlCarousel2-2.3.4/animate.css">
 <link rel="stylesheet" type="text/css" href="styles/main_styles.css">
 <link rel="stylesheet" type="text/css" href="styles/responsive.css">
 
@@ -60,7 +56,7 @@
 			<nav class="navbar navbar-light bg-black fixed-top">
 				<a href="paginaPrincipale.jsp" class="scritta navbar-brand"
 					style="color: #387044"> <img
-					style="width: 100px; height: 100px;" src="assets/logo prova2.png"
+					style="width: 100px; height: 100px;" src="assets/logo.png"
 					alt="" />
 
 				</a>
@@ -173,8 +169,8 @@
 		</div>
 
 		<!-- Bootstrap core JavaScript -->
-		<script src="vendor/jquery/jquery.min.js"></script>
-		<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+		<script src="themes_reference/vendor/jquery/jquery.min.js"></script>
+		<script src="themes_reference/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 	</c:if>
 	<c:if test="${username == null}">
@@ -183,7 +179,7 @@
 	</c:if>
 </body>
 <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-<script src="carrello_assets/js/bootstrap.min.js"></script>
-<script src="carrello_assets/js/customjs.js"></script>
+<script src="assets/carrello_assets/js/bootstrap.min.js"></script>
+<script src="assets/carrello_assets/js/customjs.js"></script>
 
 </html>
