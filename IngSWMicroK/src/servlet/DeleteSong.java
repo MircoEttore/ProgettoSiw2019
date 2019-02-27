@@ -16,10 +16,10 @@ public class DeleteSong extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-System.out.println("SONO DENTRO LA SRVET");
+//System.out.println("SONO DENTRO LA SRVET");
 		String backTo = request.getParameter("from");
 		String idCarrello=request.getParameter("IdCart");
-		System.out.println(backTo);
+		//System.out.println(backTo);
 	 if (request.getParameter("cartCanzoneId") != null && !request.getParameter("cartCanzoneId").equals("")) {
 			int id_canzone = Integer.valueOf(request.getParameter("cartCanzoneId"));
 			

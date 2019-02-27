@@ -7,6 +7,7 @@ import java.util.List;
 
 import model.Artista;
 import model.Canzone;
+import model.Playlist;
 import model.Utente;
 import persistance.DAOFactory;
 import persistance.DatabaseManager;
@@ -32,8 +33,18 @@ public class JDBCExample {
 			//List<Canzone>lista=DatabaseManager.getInstance().getDaoFactory().getUtenteDAO().CercaCanzoniCarrello(11);
 		//	System.out.println("Size:"+lista.size());
 			// TODO Auto-generated method stub
-			DatabaseManager.getInstance().getDaoFactory().getUtenteDAO().RimuoviDalCarrello(1, 1);
-//			
+			List<Canzone> c= DatabaseManager.getInstance().getDaoFactory().getCanzoneDao().findCanzone("puglia");
+			c.get(0).setAlbum("rxxxssa");
+			DatabaseManager.getInstance().getDaoFactory().getCanzoneDao().update(c.get(0));
+			//List<Canzone>cc=DatabaseManager.getInstance().getDaoFactory().getCanzoneDao().findForGenere("Rock");
+		//	System.err.println(list.get(0);
+			
+		
+			
+			
+			
+			
+//			flo
 //			for (Utente U:u) {
 //			U.setPassword("ciao");
 //				DatabaseManager.getInstance().getDaoFactory().getUtenteDAO().update(U);

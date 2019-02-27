@@ -61,15 +61,5 @@ public class AggiungiEvento extends HttpServlet {
 	}
 	
 	
-	public static void main(String[] args) {
-		Artista a  = new Artista("IronMaiden")  ;
-		Evento e = new Evento("ConcertoIronMaiden", "non lo so ", a , new Date(22, 10, 2019), 12.0) ; 
-		System.out.println("id di a "+a.getIdArtista());
-		try {
-			DatabaseManager.getInstance().getDaoFactory().getEventoDAO().save(e);
-		} catch (SQLException e1) {
-			e1.printStackTrace();
-		} ; 
-		
-	}
+
 }

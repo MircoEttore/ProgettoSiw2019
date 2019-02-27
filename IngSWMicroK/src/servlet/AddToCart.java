@@ -20,7 +20,7 @@ public class AddToCart extends HttpServlet {
 		
 			String referer = request.getParameter("from");
 			if (request.getParameter("id") != null && !request.getParameter("id").equals("")) {
-				System.out.println("get if");
+				//System.out.println("get if");
 				doPost(request, response);
 			} else {
 				request.getRequestDispatcher("carrello.jsp").forward(request, response);
@@ -31,8 +31,8 @@ public class AddToCart extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String addToCart = request.getParameter("id");
 		String referer = request.getParameter("from");
-		System.out.println((String) request.getSession().getAttribute("username")+"sono l'utente");
-		System.out.println(DatabaseManager.getInstance().getDaoFactory().getUtenteDAO().addToCart((String) request.getSession().getAttribute("username"),(Integer.valueOf(addToCart) )));
+	//	System.out.println((String) request.getSession().getAttribute("username")+"sono l'utente");
+	//System.out.println(DatabaseManager.getInstance().getDaoFactory().getUtenteDAO().addToCart((String) request.getSession().getAttribute("username"),(Integer.valueOf(addToCart) )));
 		request.setAttribute("search", request.getParameter("search"));
 		request.getRequestDispatcher(referer).forward(request, response);
 	}

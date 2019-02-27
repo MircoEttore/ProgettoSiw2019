@@ -3,6 +3,7 @@ package servlet;
 import java.io.IOException;
 import java.sql.SQLException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -25,6 +26,13 @@ public class AggiungiCanzone extends HttpServlet {
 
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	//	System.out.println(request.getParameter("modifica")+"**************************");
+		if(request.getParameter("modifica").equalsIgnoreCase("modifica"))
+			{RequestDispatcher dispatcher =request.getRequestDispatcher("modificaCanzone");
+		//	System.out.println("****************");
+			dispatcher.forward(request, response);
+			}else {
+		
 		Canzone registrazioneCanzone = new Canzone();
 		registrazioneCanzone.setTitolo(request.getParameter("titolo"));
 		registrazioneCanzone.setArtista(new Artista(request.getParameter("artista")));
@@ -32,20 +40,22 @@ public class AggiungiCanzone extends HttpServlet {
 		registrazioneCanzone.setAnno(Integer.valueOf(request.getParameter(("anno"))));
 		registrazioneCanzone.setCasaDiscografica(request.getParameter("casaDiscografica"));
 		registrazioneCanzone.setGenere(request.getParameter("genere"));
-		registrazioneCanzone.setPrezzo(Double.valueOf(request.getParameter("prezzo")));
+		registrazioneCanzone.setPrezzo(1);
 		registrazioneCanzone.setUrl(request.getParameter("url"));
 		registrazioneCanzone.setIndiceDiGradimento(new IndiceDiGradimento(6));
 
 
 	
-		System.out.println(registrazioneCanzone.getTitolo()+" "+registrazioneCanzone.getGenere());
+		//System.out.println(registrazioneCanzone.getTitolo()+" "+registrazioneCanzone.getGenere());
 		try {
 			DatabaseManager.getInstance().getDaoFactory().getCanzoneDao().save(registrazioneCanzone);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-	
-	}
 
+		response.sendRedirect("amministratore.jsp");
+	}
+		
+	}
 }

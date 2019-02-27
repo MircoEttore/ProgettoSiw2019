@@ -29,7 +29,7 @@ public class SignUpServlet extends HttpServlet {
 		registrazioneUtente.setIndirizzo(request.getParameter("indirizzo"));
 		registrazioneUtente .setEmail(request.getParameter("email"));
 		registrazioneUtente.setPassword(request.getParameter("password"));
-		System.out.println(registrazioneUtente.getEmail()+" "+registrazioneUtente.getNome());
+	//	System.out.println(registrazioneUtente.getEmail()+" "+registrazioneUtente.getNome());
 		switch (DatabaseManager.getInstance().getDaoFactory().getUtenteDAO().save(registrazioneUtente)) {
 		case 0:
 			request.setAttribute("signupMessage", "Registrazione effettuata con successo");

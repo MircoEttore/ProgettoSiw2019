@@ -16,14 +16,13 @@
 <meta charset="ISO-8859-1">
 <title>Login Page</title>
 
+<script src="js/jquery-3.3.1.min.js"></script>
 
-<link rel="stylesheet" href="bootstrap-4.1.3/css/bootstrap.min.css"	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-<script src="js/jquery-3.2.1.min.js"></script>
-<script src="bootstrap-4.1.3//js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="bootstrap-4.1.3/css/bootstrap.min.css">
+<script src="bootstrap-4.1.3/js/bootstrap.min.js"></script>
 
 <!--Fontawesome CDN-->
-<link rel="stylesheet"
-href="fontawesome-free-5.3.1-web/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+<link rel="stylesheet"  href="fontawesome-free-5.3.1-web/css/all.css" >
 <link rel="stylesheet" type="text/css" href="css/Style.css">
 </head>
 <body>

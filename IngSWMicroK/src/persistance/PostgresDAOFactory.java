@@ -3,11 +3,16 @@ package persistance;
 import persistance.JDBC.ArtistaDaoJDBC;
 import persistance.JDBC.CanzoneDaoJDBC;
 import persistance.JDBC.EventoDaoJDBC;
+import persistance.JDBC.FollowDaoJDBC;
+import persistance.JDBC.MiPiaceDaoJDBC;
+import persistance.JDBC.PlaylistDaoJDBC;
 import persistance.JDBC.UtenteDaoJDBC;
 import persistence.dao.ArtistaDao;
 import persistence.dao.CanzoneDao;
-import persistence.dao.CategorieDAO;
 import persistence.dao.EventoDao;
+import persistence.dao.FollowDao;
+import persistence.dao.MiPiaceDao;
+import persistence.dao.PlaylistDao;
 import persistence.dao.UtenteDao;
 
 public class PostgresDAOFactory extends DAOFactory {
@@ -27,7 +32,8 @@ public class PostgresDAOFactory extends DAOFactory {
 		//	dataSource=new DataSource("jdbc:postgresql://192.168.1.4:5432/Database_MicroK","postgres","postgres");
 		//	dataSource=new DataSource("jdbc:postgresql://37.183.87.125:5432/postgres","postgres","password");
 		//	dataSource=new DataSource("jdbc:postgresql://192.168.43.197:5432/Database_MicroK","postgres","postgres");
-			dataSource=new DataSource("jdbc:postgresql://localhost:5432/Database_MicroK","postgres","postgres");
+			//dataSource=new DataSource("jdbc:postgresql://localhost:5432/Database_MicroK","postgres","postgres");
+				dataSource=new DataSource("jdbc:postgresql://37.183.87.125:5432/postgres","pi","password");
 
 		} 
 		catch (Exception e) {
@@ -55,13 +61,27 @@ public class PostgresDAOFactory extends DAOFactory {
 		return new EventoDaoJDBC(dataSource);
 	}
 
-	@Override
-	public CategorieDAO getCategoriaDAO() {
-		return null;
-	}
+	
 
 	@Override
 	public UtenteDao getUtenteDAO() {
 		return new UtenteDaoJDBC (dataSource);
+	}
+
+	@Override
+	public PlaylistDao getPlaylistDAO() {
+		// TODO Auto-generated method stub
+		return new PlaylistDaoJDBC (dataSource);
+	}
+
+	@Override
+	public MiPiaceDao getMiPiaceDao() {
+		// TODO Auto-generated method stub
+		return new MiPiaceDaoJDBC(dataSource);	}
+
+	@Override
+	public FollowDao getFollowDao() {
+		// TODO Auto-generated method stub
+		 return new FollowDaoJDBC(dataSource);
 	}
 }

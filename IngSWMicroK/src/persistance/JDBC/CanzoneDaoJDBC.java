@@ -11,8 +11,9 @@ import java.util.Comparator;
 import model.Artista;
 import model.Canzone;
 import model.IndiceDiGradimento;
-
+import model.Playlist;
 import persistance.DataSource;
+import persistance.DatabaseManager;
 import persistance.PersistenceException;
 
 import persistence.dao.CanzoneDao;
@@ -109,9 +110,10 @@ public class CanzoneDaoJDBC implements CanzoneDao {
 	
 	public void update(Canzone canzone) {
 		Connection connection = this.dataSource.getConnection();
+		System.out.println(canzone.getAlbum()+"*****************************");
 		try {
 			//String update = "update canzone SET Nome = ?,Artista = ?, Anno = ? , Genere = ? , IndiceDiGradimento = ? , Album = ? , CasaDiscografica = ? , Url_canzoni = ? WHERE idcanzone = ? ";
-			String update="update canzone SET titolo= ?,artista= ?,genere= ?,anno= ?,casadiscografica= ?,indicedigradimento= ?,url= ?,album=? Where idcanzone=?";
+			String update="update canzone SET titolo=?,artista=?,genere=?,anno=?,casadiscografica=?,indicedigradimento=?,url=?,album=? Where idcanzone=?";
 			PreparedStatement statement = connection.prepareStatement(update);
 			statement.setString(1, canzone.getTitolo());
 			statement.setString(2, canzone.getArtista().getNomeArtista());
@@ -314,7 +316,7 @@ public List<Canzone> findTop5ForGenere(String genere) {
 	//	searchQuery=searchQuery.toUpperCase();
 		System.out.println("string : "+searchQuery);
 		ArrayList<Canzone> listaCanzoni = new ArrayList<>();
-		System.out.println(searchQuery);
+	/*	System.out.println(searchQuery);
 		String[] someQueries = searchQuery.split(" ");
 		ArrayList<String> queries = new ArrayList<String>();
 		
@@ -322,22 +324,20 @@ public List<Canzone> findTop5ForGenere(String genere) {
 		for (String s : someQueries) {
 			queries.add(s);
 		}
-		
+		*/
 		
 		
 		try {
-			for (String search : queries) {
-				System.out.println(search);
+			
 				PreparedStatement statement;
-				String query = "SELECT * FROM canzone WHERE canzone.titolo LIKE ? OR canzone.artista LIKE  ?  OR  canzone.genere LIKE ? OR  canzone.album LIKE ?";
+				String query = "SELECT * FROM canzone WHERE canzone.titolo ILIKE ? OR canzone.artista ILIKE  ?  OR  canzone.genere ILIKE ? OR  canzone.album ILIKE ?";
 				statement = connection.prepareStatement(query);
-				statement.setString(1, "%"+search+"%");
-				statement.setString(2, "%"+search+"%");
-				statement.setString(3, "%"+search+"%");
-				statement.setString(4, "%"+search+"%");
+				statement.setString(1, "%"+searchQuery+"%");
+				statement.setString(2, "%"+searchQuery+"%");
+				statement.setString(3, "%"+searchQuery+"%");
+				statement.setString(4, "%"+searchQuery+"%");
 				ResultSet result = statement.executeQuery();
 			//	System.out.println(search);
-				int i=0;
 				while (result.next()) {
 					Canzone canzone = new Canzone();
 					canzone.setIdCanzone(result.getInt("idcanzone"));				
@@ -362,8 +362,7 @@ public List<Canzone> findTop5ForGenere(String genere) {
 					}
 			
 				}
-				//System.out.println(i);
-			}
+			
 			
 
 			 connection.close();
@@ -393,40 +392,188 @@ public List<Canzone> findTop5ForGenere(String genere) {
 		
 		return false;
 	}
+
+	@Override
+	public List<Canzone> findCanzoneByArtista(String searchQuery) {
+		connection = this.dataSource.getConnection();
+		//	searchQuery=searchQuery.toUpperCase();
+			System.out.println("string : "+searchQuery);
+			ArrayList<Canzone> listaCanzoni = new ArrayList<>();
+			String[] someQueries = searchQuery.split(" ");
+			ArrayList<String> queries = new ArrayList<String>();
+			
+			queries.add(searchQuery);
+			for (String s : someQueries) {
+				queries.add(s);
+			}
+			
+			
+			
+			try {
+				for (String search : queries) {
+					System.out.println(search);
+					PreparedStatement statement;
+					String query = "SELECT * FROM canzone WHERE canzone.artista ILIKE  ? ";
+					statement = connection.prepareStatement(query);
+					statement.setString(1, "%"+search+"%");
+					ResultSet result = statement.executeQuery();
+				//	System.out.println(search);
+					while (result.next()) {
+						Canzone canzone = new Canzone();
+						canzone.setIdCanzone(result.getInt("idcanzone"));				
+						canzone.setTitolo(result.getString("titolo"));
+						canzone.setArtista(new Artista (result.getString("artista")));
+						canzone.setGenere(result.getString("genere"));
+						canzone.setAnno(result.getInt("anno"));
+						canzone.setCasaDiscografica(result.getString("casadiscografica"));
+						canzone.setIndiceDiGradimento(new IndiceDiGradimento(result.getInt("IndiceDiGradimento")));
+						canzone.setUrl(result.getString("url"));
+						canzone.setAlbum(result.getString("album"));
+						canzone.setPrezzo(result.getDouble("prezzo"));
+					
+						
+						
+
+						
+						if (!cercaDuplicato(canzone,listaCanzoni)) {
+							
+							listaCanzoni.add(canzone);
+						
+						}
+				
+					}
+					//System.out.println(i);
+				}
+				
+
+				 connection.close();
+
+				
+
+			} catch (SQLException e) {
+//				throw new PersistenceException(e.getMessage());
+			} finally {
+				try {
+					connection.close();
+				} catch (SQLException e) {
+//					throw new PersistenceException(e.getMessage());
+				}
+			}
+			return listaCanzoni;
+	}
+
+	@Override
+	public Canzone findById(int id) {
+
+		Connection connection = this.dataSource.getConnection();
+		Canzone c = null;
+		PreparedStatement statement = null;
+
+		try {
+			String query = "select * from canzone where idcanzone=(?) ";
+			statement = connection.prepareStatement(query);
+			statement.setInt(1, id);
+			c = new Canzone();
+			ResultSet results = statement.executeQuery();
+			while (results.next()) {
+				c.setIdCanzone(results.getInt("idcanzone"));
+				c.setTitolo(results.getString("titolo"));
+				c.setAlbum(results.getString("album"));
+				Artista a = DatabaseManager.getInstance().getDaoFactory().getArtistaDAO().findByName(results.getString("artista")) ;
+				c.setArtista(a);
+				c.setAnno(results.getInt("anno"));
+				c.setCasaDiscografica(results.getString("casadiscografica"));
+				c.setGenere(results.getString("genere"));
+				c.setUrl(results.getString("url"));
+			}
+		} catch (SQLException e) {
+		} finally {
+			try {
+				connection.close();
+			} catch (SQLException e) {
+			}
+		}
+
+		return c;
+	}
 	
-//	@Override
-//	public void cercaStottostringa (String s ) {
-//		 connection = this.dataSource.getConnection();
-//		 try {
-//				String insert = "SELECT * from canzone as c  WHERE c.titolo LIKE ? \r\n" + "";
-//				statement = connection.prepareStatement(insert);
-//				statement.setString(1, "%"+s+"%");
-//				ResultSet result = statement.executeQuery();
-//				
-//				
-//				while (result.next()) {
-//					Canzone canzone = new Canzone();
-//					canzone.setIdCanzone(result.getInt("idcanzone"));				
-//					canzone.setTitolo(result.getString("titolo"));
-//					canzone.setArtista(new Artista (result.getString("artista")));
-//					canzone.setGenere(result.getString("genere"));
-//					canzone.setAnno(result.getInt("anno"));
-//					canzone.setCasaDiscografica(result.getString("casadiscografica"));
-//					canzone.setIndiceDiGradimento(new IndiceDiGradimento(result.getInt("IndiceDiGradimento")));
-//					canzone.setUrl(result.getString("url"));
-//					canzone.setAlbum(result.getString("album"));
-//					canzone.setPrezzo(result.getDouble("prezzo"));
-//					System.out.println(canzone.getTitolo());
-//					}
-//				
-//			} catch (Exception e) {
-//				e.printStackTrace();
-//			} finally {
-//				try {
-//					connection.close();
-//				} catch (SQLException e) {
-//				}
-//			}
-//	}
 	
+	@Override
+	public ArrayList<Playlist> findByAlbum(String search) {
+		connection = this.dataSource.getConnection();
+		//	searchQuery=searchQuery.toUpperCase();
+			System.out.println("string : "+search);
+			ArrayList<Playlist> listaAlbum= new ArrayList<>();
+			
+			
+			
+			
+			
+			
+			try {
+				
+					System.out.println(search);
+					PreparedStatement statement;
+					String query = "SELECT canzone.album FROM canzone WHERE canzone.artista ILIKE  ? ";
+					statement = connection.prepareStatement(query);
+					statement.setString(1, "%"+search+"%");
+					ResultSet result = statement.executeQuery();
+					Playlist playlist;
+					
+					while (result.next()) {
+						 playlist =new Playlist();
+						 playlist.setNomePlaylist(result.getString("album"));
+						 playlist.setPathImagePlaylist("path_image");
+							listaAlbum.add(playlist);
+						 
+					}	
+				 	statement.addBatch();
+
+					for (Playlist p:listaAlbum) {
+							String query2 = "SELECT * FROM canzone WHERE canzone.album ILIKE  ?" ;
+							statement= connection.prepareStatement(query2) ; 
+							statement.setString( 1,p.getNomePlaylist()) ;
+							
+							ResultSet result1 = statement.executeQuery();
+							while(result1.next()) {
+								Canzone canzone = new Canzone();
+								canzone.setIdCanzone(result1.getInt("idcanzone"));				
+								canzone.setTitolo(result1.getString("titolo"));
+								canzone.setArtista(new Artista (result1.getString("artista")));
+								canzone.setGenere(result1.getString("genere"));
+								canzone.setAnno(result1.getInt("anno"));
+								canzone.setCasaDiscografica(result1.getString("casadiscografica"));
+								canzone.setIndiceDiGradimento(new IndiceDiGradimento(result1.getInt("IndiceDiGradimento")));
+								canzone.setUrl(result1.getString("url"));
+								canzone.setAlbum(result1.getString("album"));
+								canzone.setPrezzo(result1.getDouble("prezzo"));
+								
+								p.addCanzone(canzone);
+								
+							}
+						 
+					
+				
+					}
+					//System.out.println(i);
+				
+				
+
+				 connection.close();
+
+				
+
+			} catch (SQLException e) {
+//				throw new PersistenceException(e.getMessage());
+			} finally {
+				try {
+					connection.close();
+				} catch (SQLException e) {
+//					throw new PersistenceException(e.getMessage());
+				}
+			}
+			return listaAlbum;
+	}
+
+
 }

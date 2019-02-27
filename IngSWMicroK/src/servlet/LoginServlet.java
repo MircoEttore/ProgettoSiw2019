@@ -47,7 +47,7 @@ public class LoginServlet extends HttpServlet {
 					req.getSession().setAttribute("username", tryLogin.getEmail());
 					req.getSession().setAttribute("userId", tryLogin.getIdUtente());
 		
-				resp.sendRedirect("paginaPrincipale.jsp");
+				resp.sendRedirect("Home.jsp");
 				resp.setStatus(HttpServletResponse.SC_OK);
 			} else {
 				req.getSession().setAttribute("loginMessage", "Wrong username or password");

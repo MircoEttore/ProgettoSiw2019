@@ -45,15 +45,15 @@ public class UtenteDaoJDBC implements UtenteDao {
 				return 1;
 			else {
 				statement.executeUpdate();
-				Utente uu=findByPrimaryKeyq(utente.getEmail());
+				Utente uu = findByPrimaryKeyq(utente.getEmail());
 				System.out.println(uu.getIdUtente());
-				
-				String insertCart = "INSERT INTO \"carrelloUtente\" (\"idUtente\") VALUES (?)" ; 
+
+				String insertCart = "INSERT INTO \"carrelloUtente\" (\"idUtente\") VALUES (?)";
 				statement = connection.prepareStatement(insertCart);
 				statement.setInt(1, uu.getIdUtente());
 				statement.executeUpdate();
 			}
-				
+
 			ResultSet resultSet = statement.getGeneratedKeys();
 			while (resultSet.next()) {
 				utente.setIdUtente(resultSet.getInt(1));
@@ -113,7 +113,8 @@ public class UtenteDaoJDBC implements UtenteDao {
 		}
 		return utenti;
 	}
-@Override
+
+	@Override
 	public void update(Utente utente) {
 		Connection connection = this.dataSource.getConnection();
 		try {
@@ -160,23 +161,18 @@ public class UtenteDaoJDBC implements UtenteDao {
 	}
 
 	@Override
-	public Utente findByPrimaryKey1(String email) {
+	public int findidCarrello(String email) {
 		Connection connection = this.dataSource.getConnection();
-		Utente user = new Utente();
+		int idCarrello = 0;
 		try {
 			PreparedStatement statement;
-			String query = "select * from utente where email=?";
+			String query = "select c.\"idCarrello\" from utente as u ,\"carrelloUtente\" as c where c.\"idUtente\"=u.id_utente AND u.email=?";
 			statement = (PreparedStatement) connection.prepareStatement(query);
 			statement.setString(1, email);
 			ResultSet results = statement.executeQuery();
 			while (results.next()) {
+				idCarrello = results.getInt("idCarrello");
 
-				user.setIdUtente(results.getInt("id_utente"));
-				user.setNome(results.getString("name"));
-				user.setCognome(results.getString("cognome"));
-				user.setEmail(results.getString("email"));
-				user.setIndirizzo(results.getString("indirizzo"));
-				user.setPassword(results.getString("password"));
 			}
 
 		} catch (Exception e) {
@@ -197,20 +193,20 @@ public class UtenteDaoJDBC implements UtenteDao {
 			// TODO Auto-generated catch block
 //			e.printStackTrace();
 		}
-		return user;
+		return idCarrello;
 	}
 
 	@Override
 	public UtenteCredenziali findByPrimaryKeyCredential(String email) {
-		Utente stud = findByPrimaryKey1(email);
 		UtenteCredenziali studCred = null;
-		if (stud != null) {
-			studCred = new UtenteCredenziali(dataSource);
-			studCred.setIdUtente(stud.getIdUtente());
-			studCred.setCognome(stud.getCognome());
-			studCred.setNome(stud.getNome());
-
-		}
+		/*
+		 * Utente stud = findByPrimaryKey1(email); UtenteCredenziali studCred = null; if
+		 * (stud != null) { studCred = new UtenteCredenziali(dataSource);
+		 * studCred.setIdUtente(stud.getIdUtente());
+		 * studCred.setCognome(stud.getCognome()); studCred.setNome(stud.getNome());
+		 * 
+		 * }
+		 */
 		return studCred;
 	}
 
@@ -367,7 +363,8 @@ public class UtenteDaoJDBC implements UtenteDao {
 		}
 		return status;
 	}
-@Override
+
+	@Override
 	public void RimuoviDalCarrello(int idCarrello, int id_canzone) {
 
 		Connection connection = this.dataSource.getConnection();
@@ -388,7 +385,8 @@ public class UtenteDaoJDBC implements UtenteDao {
 			}
 		}
 	}
-@Override
+
+	@Override
 	public int CercaIdCarrello(int idUtente) {
 		Connection connection = this.dataSource.getConnection();
 		Carrello c = null;
@@ -396,7 +394,7 @@ public class UtenteDaoJDBC implements UtenteDao {
 
 		try {
 			String query = "select c.\"idCarrello\" from \"carrelloUtente\" as c where c.\"idUtente\"=? ";
-			statement=connection.prepareStatement(query);
+			statement = connection.prepareStatement(query);
 			statement.setInt(1, idUtente);
 			c = new Carrello();
 			ResultSet results = statement.executeQuery();
@@ -414,13 +412,11 @@ public class UtenteDaoJDBC implements UtenteDao {
 		return c.getId();
 	}
 
-	
-	
 	@Override
 	public List<Canzone> CercaCanzoniCarrello(int IdCarrello) {
 		Connection connection = this.dataSource.getConnection();
-		Canzone canzone=null;
-		List<Canzone>listaC=new ArrayList<>();
+		Canzone canzone = null;
+		List<Canzone> listaC = new ArrayList<>();
 		try {
 			PreparedStatement statement;
 			String query = "select * from contenutocarrello as a,canzone as c where a.idcarrello=? and c.idcanzone= a.idcanzone";
@@ -430,9 +426,9 @@ public class UtenteDaoJDBC implements UtenteDao {
 			ResultSet result = statement.executeQuery();
 			while (result.next()) {
 				canzone = new Canzone();
-				canzone.setIdCanzone(result.getInt("idcanzone"));				
+				canzone.setIdCanzone(result.getInt("idcanzone"));
 				canzone.setTitolo(result.getString("titolo"));
-				canzone.setArtista(new Artista (result.getString("artista")));
+				canzone.setArtista(new Artista(result.getString("artista")));
 				canzone.setGenere(result.getString("genere"));
 				canzone.setAnno(result.getInt("anno"));
 				canzone.setCasaDiscografica(result.getString("casadiscografica"));
@@ -450,7 +446,7 @@ public class UtenteDaoJDBC implements UtenteDao {
 			} catch (SQLException e) {
 			}
 		}
-		
+
 		return listaC;
 
 	}

@@ -1,9 +1,13 @@
 package persistance;
 
+
+
 import persistence.dao.ArtistaDao;
 import persistence.dao.CanzoneDao;
-import persistence.dao.CategorieDAO;
 import persistence.dao.EventoDao;
+import persistence.dao.FollowDao;
+import persistence.dao.MiPiaceDao;
+import persistence.dao.PlaylistDao;
 import persistence.dao.UtenteDao;
 
 public abstract class DAOFactory {
@@ -55,9 +59,13 @@ public abstract class DAOFactory {
 	
 	public abstract EventoDao getEventoDAO();
 	
-	public abstract CategorieDAO getCategoriaDAO();
+
 	
 	public abstract	UtenteDao getUtenteDAO();
 
+	public abstract	PlaylistDao getPlaylistDAO();
 
+	public abstract MiPiaceDao getMiPiaceDao () ; 
+	
+	public abstract FollowDao getFollowDao () ; 
 }

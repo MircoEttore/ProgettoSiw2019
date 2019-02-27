@@ -12,12 +12,12 @@ public interface UtenteDao {
 	public void update(Utente canzone); //Update
 	public void delete(Utente canzone); //Delete	
 	public Utente findPrimaryKey(String email, String password) ;
-	UtenteCredenziali findByPrimaryKeyCredential(String email);
-	Utente findByPrimaryKey1(String email);
-	Utente  findByPrimaryKeyq(String email);
-	int addToCart(String email, int item_id);
-	List<Canzone> CercaCanzoniCarrello(int IdCarrello);
-	int CercaIdCarrello(int idUtente);
-	void RimuoviDalCarrello(int idCarrello, int id_canzone);
+	public UtenteCredenziali findByPrimaryKeyCredential(String email);
+	public int findidCarrello(String email);
+	public Utente  findByPrimaryKeyq(String email);
+	public int addToCart(String email, int item_id);
+	public List<Canzone> CercaCanzoniCarrello(int IdCarrello);
+	public int CercaIdCarrello(int idUtente);
+	public void RimuoviDalCarrello(int idCarrello, int id_canzone);
 	
 }

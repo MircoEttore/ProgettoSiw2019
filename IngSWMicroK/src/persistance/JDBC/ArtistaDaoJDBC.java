@@ -122,7 +122,7 @@ public class ArtistaDaoJDBC implements ArtistaDao {
 			try {
 				for (String search : queries) {
 					PreparedStatement statement;
-					String query = "SELECT * FROM artista WHERE artista.nome LIKE ? ";
+					String query = "SELECT * FROM artista WHERE artista.nome ILIKE ? ";
 					statement = connection.prepareStatement(query);
 					statement.setString(1, "%" + search + "%");
 					ResultSet result = statement.executeQuery();
@@ -152,11 +152,11 @@ public class ArtistaDaoJDBC implements ArtistaDao {
 	public void update(Artista artista) {
 		Connection connection = this.dataSource.getConnection();
 		try {
-			String update = "update artista SET nome= ? , path_image =? , biografia=?  Where idartista=?";
+			String update = "update artista SET nome= ? , path_image_artista=? , biografia=?  Where idartista=?";
 			PreparedStatement statement = connection.prepareStatement(update);
 			statement.setString(1, artista.getNomeArtista());
 			statement.setString(2, artista.getPathImage());
-			statement.setString(2, artista.getTextBiografia());
+			statement.setString(3, artista.getTextBiografia());
 			statement.setInt(4, artista.getIdArtista());
 			statement.executeUpdate();
 		} catch (SQLException e) {

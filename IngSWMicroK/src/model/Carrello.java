@@ -5,19 +5,32 @@ import java.util.ArrayList;
 public class Carrello {
 	private int idCanzone;
 	private int idUtente;
-
+    private int idCarrello;
 	private ArrayList<Integer>canzoniCarrello;
 	
-	
-	public Carrello() {
-		super();
+	public Carrello(int idCarrello,int idUtente) {
+		this.idCarrello = idCarrello;
+		this.idUtente = idUtente;
+
+		canzoniCarrello=new ArrayList<>();
 	}
+
 	
-	
+	public Carrello(int idCarrello) {
+		this.idCarrello = idCarrello;
+		canzoniCarrello=new ArrayList<>();
+	}
+
+
 	public Carrello(ArrayList<Integer> canzoniCarrello) {
 		super();
 		this.canzoniCarrello = canzoniCarrello;
 	}
+
+	public Carrello() {
+		// TODO Auto-generated constructor stub
+	}
+
 
 	public int getId() {
 		return idCanzone;
@@ -49,6 +62,16 @@ public class Carrello {
 
 	public int getId(int index) {
 		return this.canzoniCarrello.get(index);
+	}
+
+
+	public int getIdCarrello() {
+		return idCarrello;
+	}
+
+
+	public void setIdCarrello(int idCarrello) {
+		this.idCarrello = idCarrello;
 	}
 
 	

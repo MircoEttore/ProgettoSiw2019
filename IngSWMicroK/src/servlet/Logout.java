@@ -12,15 +12,15 @@ public class Logout extends HttpServlet {
 
 
  protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	 System.out.println("Cidddddddddddado");
+	 //System.out.println("Cidddddddddddado");
 
 	 String logout = request.getParameter("logout");
-	 System.out.println("Ciado");
+	// System.out.println("Ciado");
 
   response.getWriter().append("Served at: ").append(request.getContextPath());
  // if (logout.equals("true")) {
 		//req.getSession().setAttribute("username", null);
-System.out.println("Ciao");
+//System.out.println("Ciao");
   request.getSession().invalidate();
   response.sendRedirect("index.html");}
  //}
